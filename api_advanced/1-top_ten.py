@@ -1,15 +1,10 @@
 #!/usr/bin/python3
-"""
-Top Ten
-"""
+"""Top Ten"""
 import requests
 
 
 def top_ten(subreddit):
-    """
-    Titles function
-    """
-
+    """Titles function"""
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {"User-Agent": "Mozilla/5.0"}
     response = requests.get(url, headers=headers, allow_redirects=False)
