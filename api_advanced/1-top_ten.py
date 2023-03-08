@@ -7,7 +7,7 @@ import requests
 
 def top_ten(subreddit):
     """
-    Queries the Reddit API and prints the titles of the first 10 hot posts
+    Titles function
     """
 
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
