@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """ Queries the Reddit API and prints the titles of all hot articles """
 
 import requests
