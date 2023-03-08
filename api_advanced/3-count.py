@@ -14,6 +14,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
 
 
 def count_words(subreddit, word_list, count_dict=None):
+    """ Queries the Reddit API and prints a sorted count of given keywords """
     if count_dict is None:
         count_dict = Counter()
 

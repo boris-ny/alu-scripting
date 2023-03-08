@@ -6,6 +6,7 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after=None):
+    """ Queries the Reddit API and prints the titles of all hot articles """
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {"User-Agent": "Mozilla/5.0"}
     params = {"limit": 100}
