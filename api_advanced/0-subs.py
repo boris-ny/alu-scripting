@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """ 
-This function queries the Reddit API and returns the number of subscribers for a given subreddit. 
+0-subs
 """
 import requests
 
