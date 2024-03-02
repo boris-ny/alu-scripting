@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 
-""" 
+"""
 0-subs
 
   Args:
       subreddit: The name of the subreddit to query.
 
     Returns:
-      The number of subscribers for the subreddit, or 0 if the subreddit is invalid.
+      The number of subscribers for the subreddit, or 0 if the subreddit is \n
+      invalid.
 """
 import requests
 
@@ -19,7 +20,7 @@ def number_of_subscribers(subreddit):
 
     # Set a custom User-Agent header to avoid "Too Many Requests" errors
     headers = {
-        'User-Agent': 'my-reddit-app (https://github.com/boris-ny/alu-scriping)'}
+        'User-Agent': 'my-reddit-app (https://github.com/boris-ny/alu)'}
 
     try:
         # Send a GET request to the API endpoint, following no redirects
