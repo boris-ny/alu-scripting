@@ -1,26 +1,17 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
-
-""" Returns the number of subscribers for a given subreddit. """
-
-import requests
+""" a function that queries the Reddit API
+and returns the number of subscribers
+"""
+import requests as r
 
 
 def number_of_subscribers(subreddit):
-    """ Returns the number of subscribers for a given subreddit. """
+    headers = {'User-Agent': 'Boris'}
+    endpoint = 'https://reddit.com/r/{}/about.json'
 
-    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    headers = \
-        {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)\
-          AppleWebKit/537.36(KHTML, like Gecko) \
-         Chrome/90.0.4430.93 Safari/537.36'}
-    response = requests.get(url, headers=headers, allow_redirects=False)
-    if response.status_code == 200:
-        return response.json().get('data').get('subscribers')
-    else:
+    subs = r.get(endpoint.format(subreddit), headers=headers)
+
+    if subs.status_code != 200:
         return 0
-
-
-if __name__ == '__main__':
-    print(number_of_subscribers)('programming')
-    print(number_of_subscribers)('not_a_valid_subreddit')
+    else:
+        return subs.json().get('data').get('subscribers')
