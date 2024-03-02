@@ -2,18 +2,17 @@
 
 """ 
 0-subs
+
+  Args:
+      subreddit: The name of the subreddit to query.
+
+    Returns:
+      The number of subscribers for the subreddit, or 0 if the subreddit is invalid.
 """
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """
-    Args:
-      subreddit: The name of the subreddit to query.
-
-    Returns:
-      The number of subscribers for the subreddit, or 0 if the subreddit is invalid.
-    """
 
     # Define the Reddit API endpoint for subreddit information
     url = f"https://www.reddit.com/r/{subreddit}/about.json?limit=0"
