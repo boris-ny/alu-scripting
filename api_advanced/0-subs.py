@@ -1,25 +1,21 @@
 #!/usr/bin/python3
 """
 0-subs
-
-  Args:
-      subreddit: The name of the subreddit to query.
-
-    Returns:
-      The number of subscribers for the subreddit, or 0 if the subreddit is \n
-      invalid.
 """
 import requests
 
 
 def number_of_subscribers(subreddit):
+    """
+    Returns the number of subscribers for a given subreddit
+    """
 
     # Define the Reddit API endpoint for subreddit information
     url = f"https://www.reddit.com/r/{subreddit}/about.json?limit=0"
 
     # Set a custom User-Agent header to avoid "Too Many Requests" errors
     headers = {
-        'User-Agent': 'my-reddit-app (https://github.com/boris-ny/alu)'}
+        'User-Agent': 'my-reddit-app-v0.1'}
 
     try:
         # Send a GET request to the API endpoint, following no redirects
