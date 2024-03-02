@@ -4,8 +4,10 @@
 
 import requests
 
+
 def number_of_subscribers(subreddit):
-    response = requests.get("https://www.reddit.com/r/{}/about.json".format(subreddit))
+    response = requests.get("https://www.reddit.com/r/{}/about.json".
+                            nformat(subreddit))
     if response.statuscode == 200:
         return response["subscribers"]
     else:
